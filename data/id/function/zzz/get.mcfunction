@@ -1,0 +1,1 @@
+$data modify storage id:io out set from storage id:$(id) data

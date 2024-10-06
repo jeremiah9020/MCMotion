@@ -1,0 +1,1 @@
+execute as @p[tag=!id.tagged] run function id:zzz/setup

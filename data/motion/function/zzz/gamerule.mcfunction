@@ -1,0 +1,2 @@
+gamerule minecartMaxSpeed 1000
+return 11
