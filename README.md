@@ -49,6 +49,7 @@ function motion:create_context {
         vel: [double, double, double]?,
         drag: double?,
         damping: double?,
+        fall_damage: boolean?,
         friction: [double, double, double]?,
         cancel: {
             stop: boolean?
@@ -75,6 +76,7 @@ function motion:update_context {
         },
         drag: double?,
         damping: double?,
+        fall_damage: boolean?,
         friction: {
             x: double?
             y: double?

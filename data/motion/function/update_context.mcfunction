@@ -20,3 +20,4 @@ execute if data storage motion:temp opts.cancel if data storage motion:temp opts
 execute if data storage motion:temp opts.cancel if data storage motion:temp opts.cancel.speed store result score @s motion.cancel.speed run data get storage motion:temp opts.cancel.speed
 
 execute if data storage motion:temp {opts:{continuity:true}} run function motion:zzz/continuity
+execute if data storage motion:temp opts.fall_damage store result score @s motion.fall_damage run data get storage motion:temp opts.fall_damage

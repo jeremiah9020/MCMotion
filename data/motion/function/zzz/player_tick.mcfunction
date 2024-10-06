@@ -1,6 +1,8 @@
 execute if entity @s[tag=motion.mode.creative_flight] run function motion:add_force/creative_flight
 execute if entity @s[tag=motion.mode.player] run function motion:add_force/player
 
+execute if score @s motion.fall_damage matches 0 on vehicle run data modify entity @s FallDistance set value 0f
+
 # Tracking velocity for continuity
 scoreboard players operation @s motion.lx = @s motion.x
 scoreboard players operation @s motion.ly = @s motion.y
@@ -25,11 +27,13 @@ function motion:zzz/put_player_in_cart
 execute on vehicle store result score actual.vx motion.thread run data get entity @s Motion[0] 21053
 execute on vehicle store result score actual.vy motion.thread run data get entity @s Motion[1] 21053
 execute on vehicle store result score actual.vz motion.thread run data get entity @s Motion[2] 21053
-# execute if score @s motion.start matches 0 if score @s motion.velocity.y matches ..-1 if score actual.vy motion.thread > @s motion.velocity.y run say this one!
 execute if score @s motion.start matches 0 if score @s motion.velocity.y matches ..-1 if score actual.vy motion.thread matches 1.. run function motion:zzz/collision/y
 execute if score @s motion.start matches 0 if score actual.vx motion.thread matches 0 unless score @s motion.velocity.x matches 0 run function motion:zzz/collision/x
 execute if score @s motion.start matches 0 if score actual.vy motion.thread matches 0 unless score @s motion.velocity.y matches 0 run function motion:zzz/collision/y
 execute if score @s motion.start matches 0 if score actual.vz motion.thread matches 0 unless score @s motion.velocity.z matches 0 run function motion:zzz/collision/z
+execute if score actual.vy motion.thread matches 0.. on vehicle run data modify entity @s FallDistance set value 0f
+
+
 
 # Forces!
 function id:get/executor

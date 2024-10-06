@@ -13,6 +13,7 @@ scoreboard players set @s motion.active 1
 scoreboard players set @s motion.velocity.x 0
 scoreboard players set @s motion.velocity.y 0
 scoreboard players set @s motion.velocity.z 0
+scoreboard players set @s motion.fall_damage 0
 scoreboard players set @s motion.drag 1000
 scoreboard players set @s motion.damping 0
 scoreboard players set @s motion.friction.x 1000
@@ -35,6 +36,7 @@ execute if data storage motion:temp opts.cancel if data storage motion:temp opts
 execute if data storage motion:temp opts.cancel if data storage motion:temp opts.cancel.death store result score @s motion.cancel.death run data get storage motion:temp opts.cancel.death
 execute if data storage motion:temp opts.cancel if data storage motion:temp opts.cancel.ground store result score @s motion.cancel.ground run data get storage motion:temp opts.cancel.ground
 execute if data storage motion:temp opts.cancel if data storage motion:temp opts.cancel.speed store result score @s motion.cancel.speed run data get storage motion:temp opts.cancel.speed 1000
+execute if data storage motion:temp {opts:{fall_damage:true}} run scoreboard players set @s motion.fall_damage 1
 
 execute if data storage motion:temp {opts:{continuity:true}} run function motion:zzz/continuity
 

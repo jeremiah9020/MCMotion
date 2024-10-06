@@ -13,6 +13,7 @@ scoreboard objectives add motion.cancel.ground dummy
 scoreboard objectives add motion.cancel.speed dummy
 scoreboard objectives add motion.start dummy
 scoreboard objectives add motion.stop dummy
+scoreboard objectives add motion.fall_damage dummy
 
 scoreboard objectives add motion.vx dummy
 scoreboard objectives add motion.vy dummy
